@@ -8,7 +8,7 @@ openMutex=threading.Lock()
 port=1
 openPorts=[]
 
-def sigint(signum, frame):
+def sigint_handler(signum, frame):
    global portMutex
    global port
 
@@ -58,7 +58,7 @@ def main():
       return 1
 
    ip=sys.argv[1]
-   signal.signal(signal.SIGINT, sigint)
+   signal.signal(signal.SIGINT, sigint_handler)
    for _ in range(1000):
       thread=threading.Thread(target=ssh_checker_worker, args=(ip,))
       thread.start()
