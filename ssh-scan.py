@@ -19,7 +19,6 @@ def sigint_handler(signum, frame):
 def ssh_checker_worker(ip):
    global portMutex
    global openMutex
-   global jobMutex
    global port
    global openPorts
 
