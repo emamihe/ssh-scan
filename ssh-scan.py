@@ -8,7 +8,6 @@ openMutex=threading.Lock()
 port=1
 openPorts=[]
 
-
 def sigint(signum, frame):
    global portMutex
    global port
@@ -74,6 +73,7 @@ def main():
    print "============================================================"
    for openPort in openPorts:
       print "TCP/%s" % openPort
+   return 0
 
 if __name__=="__main__":
    sys.exit(main())
